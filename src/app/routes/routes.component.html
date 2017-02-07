@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div>
+
+    <h3>User:</h3>
+    <p>
+      Name: {{user.name}}
+      <br>
+      Address: {{user.address}}
+      <br>
+      Phone: {{user.phone}}
+    </p>
+    <h1>Routes through stop {{ user.stop }}</h1>
+    <ul>
+      <li *ngFor="let route of routes">
+        <span (click)="showBus(route.route.gtfsId)">{{ route.name | custom}}</span>
+      </li>
+    </ul>
+
+
+
+
+  </div>
+  <div>
+
+    <h4>{{ time | date:'d MMMM y HH:mm' }}</h4>
+    <iframe width="600" height="450" [src]="url | safePipe"></iframe>
+
+  </div>
+
+
+</div>
